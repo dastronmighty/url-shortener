@@ -1,14 +1,14 @@
 {
   "name": "url-shortener",
   "version": "2.0.0",
-  "description": "A node url shortener",
+  "description": "A node url shortener for use within CarTrawler and its associated apps",
   "main": "src/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/met-office-lab/url-shortener.git"
+    "url": "ssh://git@stash.cabforce.com:7999/cod/ct-link-shortener.git"
   },
   "author": "Jacob Tomlinson <jacob@jacobtomlinson.co.uk> (http://www.informaticslab.co.uk/)",
-  "license": "GPLv3",
+  "license": "GPLV3",
   "dependencies": {
     "body-parser": "^1.18.3",
     "ejs": "^2.6.1",

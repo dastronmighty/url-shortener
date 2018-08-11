@@ -1,19 +1,8 @@
 # url-shortener
+
 A MEAN url shortener.
 
 ## Running
-
-### Docker
-
-```Shell
-git clone https://github.com/met-office-lab/url-shortener.git
-cd url-shortener
-docker build -t url-shortener .
-docker run --name mongo mongo:3
-docker run -e DB_HOST=mongo -e DOMAIN=domain.tld --link mongo url-shortener
-```
-
-### Classic
 
 This requires `mongo` and `node` (and optionally `nodemon`) to be installed already on your platform.
 
@@ -56,18 +45,18 @@ Creates a new shortened url.
 
 #### Request
 
-| Parameter | Description |
-| --------- | ----------- |
-| `url`     | url to be shortened. |
+| Parameter | Description                                                               |
+| --------- | ------------------------------------------------------------------------- |
+| `url`     | url to be shortened.                                                      |
 | `short`   | _(optional)_ short code to use. If not set one will be generated for you. |
 
 #### Response `result`
 
-| Property | Description |
-| --------- | ----------- |
+| Property  | Description                       |
+| --------- | --------------------------------- |
 | `url`     | the url which has been shortened. |
-| `short`   | the short code used. |
-| `baseurl`   | the base url of the server. |
+| `short`   | the short code used.              |
+| `baseurl` | the base url of the server.       |
 
 #### Example
 
@@ -82,11 +71,11 @@ Returns whether a short code exists. Will return `404` if it doesn't exist.
 
 #### Response `result`
 
-| Property | Description |
-| --------- | ----------- |
+| Property  | Description                       |
+| --------- | --------------------------------- |
 | `url`     | the url which has been shortened. |
-| `short`   | the short code used. |
-| `baseurl`   | the base url of the server. |
+| `short`   | the short code used.              |
+| `baseurl` | the base url of the server.       |
 
 #### Example
 
@@ -104,10 +93,10 @@ Returns a random string to use as a short.
 
 #### Response `result`
 
-| Property | Description |
-| --------- | ----------- |
-| `short`   | the generated short code. |
-| `baseurl`   | the base url of the server. |
+| Property  | Description                 |
+| --------- | --------------------------- |
+| `short`   | the generated short code.   |
+| `baseurl` | the base url of the server. |
 
 #### Example
 
@@ -120,18 +109,16 @@ $ curl http://domain.tld/api/genshort
 
 To configure your server you can set some environment variables before starting the node application. If you're using docker simply pass the variables in the run command with `-e VAR=value`, otherwise set them with `export VAR=value` within your bash environment.
 
-| Variable | Description | Default |
-| -------- | ----------- | ------- |
-| DOMAIN | The domain name your server is running on. | `localhost` |
-| PORT | The port to run your node express server on. | `3000` |
-| DB_HOST | The hostname of your mongodb server. | `mongo` |
-| DB_PORT | The port of your mongodb server. | `27017` |
-| DB_NAME | The database name to use. | `urlshort` |
-| SHORT_LENGTH | The length of a randomly generated short code | `7` |
-| ROOT_REDIRECT | The url to redirect to from  `http://domain.tld:port/`. | `/web/index.html` |
-
-## Contributing
-Pull requests are appreciated
+| Variable      | Description                                            | Default           |
+| ------------- | ------------------------------------------------------ | ----------------- |
+| DOMAIN        | The domain name your server is running on.             | `localhost`       |
+| PORT          | The port to run your node express server on.           | `3000`            |
+| DB_HOST       | The hostname of your mongodb server.                   | `mongo`           |
+| DB_PORT       | The port of your mongodb server.                       | `27017`           |
+| DB_NAME       | The database name to use.                              | `urlshort`        |
+| SHORT_LENGTH  | The length of a randomly generated short code          | `7`               |
+| ROOT_REDIRECT | The url to redirect to from `http://domain.tld:port/`. | `/web/index.html` |
 
 ## License
+
 GPLv3
